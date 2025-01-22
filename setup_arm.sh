@@ -46,7 +46,7 @@ gdown https://drive.google.com/uc?id=14Kb5SPBk_jfdLZ_CDBNitW98QLDlKR5O # items_h
 cd ..
 
 # Download spaCy large NLP model
-python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_lg
 
 # Build search engine index
 cd search_engine
