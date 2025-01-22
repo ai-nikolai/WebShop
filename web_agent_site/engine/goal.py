@@ -9,7 +9,14 @@ from rich import print
 from thefuzz import fuzz
 from web_agent_site.engine.normalize import normalize_color
 
-nlp = spacy.load("en_core_web_sm")
+try:
+    print("TRYING TO LOAD large model")
+    nlp = spacy.load("en_core_web_lg")
+    print("SUCCESSFUL - loaded large model")
+except:
+    print("FAILED TO LOAD EN_CORE_WEB_LG loading small model")
+    nlp = spacy.load("en_core_web_sm")
+    print("LOADED small model")
 
 PRICE_RANGE = [10.0 * i for i in range(1, 100)]
 
