@@ -42,16 +42,5 @@ RUN chmod +x docker_setup.sh && \
 COPY run_prod_docker.sh /app 
 EXPOSE 3000
 
-# Additional install
-# # Install Python dependencies
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-    conda activate webshop && \
-    pip install Werkzeug==2.2.2 numpy==1.24.4
-
-RUN ln -s /opt/conda/envs/webshop/lib/libmkl_core.so /opt/conda/envs/webshop/lib/libmkl_core.so.1
-RUN ln -s /opt/conda/envs/webshop/lib/libmkl_intel_lp64.so /opt/conda/envs/webshop/lib/libmkl_intel_lp64.so.1
-RUN ln -s /opt/conda/envs/webshop/lib/libmkl_gnu_thread.so /opt/conda/envs/webshop/lib/libmkl_gnu_thread.so.1
-
-
 # Actual command to run the server
 CMD ["./run_prod_docker.sh"]

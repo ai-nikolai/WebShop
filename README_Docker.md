@@ -9,10 +9,20 @@ docker container run -p 3000:3000 ainikolai/webshop:latest
 
 ## Building Docker locally:
 ```bash
-docker image build -t ainikolai/webshop:latest .
+docker image build -t ainikolai/webshop:v2 .
 ```
 
 Running the image:
 ```bash
-docker image build -t ainikolai/webshop:latest .
+docker container run -p 3000:3000 ainikolai/webshop:v2
+```
+
+Pushing image:
+```bash
+docker image push ainikolai/webshop:latest
+```
+
+## For interactive running of the docker container:
+```bash
+docker container run -it ainikolai/webshop:v2 bash
 ```

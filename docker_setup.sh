@@ -2,6 +2,16 @@
 . /opt/conda/etc/profile.d/conda.sh
 conda activate webshop
 
+# Patching up the Docker environment
+ln -s /opt/conda/envs/webshop/lib/libmkl_core.so /opt/conda/envs/webshop/lib/libmkl_core.so.1
+ln -s /opt/conda/envs/webshop/lib/libmkl_intel_lp64.so /opt/conda/envs/webshop/lib/libmkl_intel_lp64.so.1
+ln -s /opt/conda/envs/webshop/lib/libmkl_gnu_thread.so /opt/conda/envs/webshop/lib/libmkl_gnu_thread.so.1
+# this is needed to run the following things
+pip install Werkzeug==2.2.2 numpy==1.24.4
+
+
+
+
 # Download dataset into `data` folder via `gdown` command
 mkdir -p data
 cd data
